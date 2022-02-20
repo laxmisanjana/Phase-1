@@ -1,30 +1,19 @@
-public class AccessModifiers {
-
-	public void methodPublic()
-	{
-		System.out.println("This is my Public Method");
-	}
-
-	void methodPrivate()
-	{
-		System.out.println("this is my Private Method");
-	}
-
-	void methodDefault()
-	{
-		System.out.println("This is my Default Method");
-	}
-	protected void methodProtected()
-	{
-		System.out.println("This is my Protected Method");
-	}
-
-	//same class able to access all type of modifiers
-	public static void main(String[] args) {
-		AccessModifiers obj=new AccessModifiers();
-		obj.methodPublic();
-		obj.methodDefault();
-		obj.methodPrivate();
-		obj.methodProtected();
-	}
-}
+class AccessModifiers
+{  
+private int a=40;  
+public int b=20; 
+int c=30;
+protected int d=45;
+}  
+  
+class Main extends AccessModifiers
+{  
+ public static void main(String args[]){  
+	 AccessModifiers obj=new AccessModifiers();  
+   System.out.println(obj.b);//it prints 20  
+   //System.out.println(obj.a);//it gives compile time errror since a is private variable
+   System.out.println(obj.c);//it prints 30 as it belongs to same package
+   System.out.println(obj.d);//it prints  45 as class B is extending class A 
+   
+   }  
+}  
